@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do Placar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .team {
+            margin: 20px 0;
+        }
+        .team h2 {
+            margin: 10px 0;
+        }
+        .message-board {
+            margin-top: 20px;
+        }
+        .message-board textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Placar</h1>
+        <div class="team" id="teamOrange">
+            <h2>Laranja: <span id="scoreOrange">0</span></h2>
+        </div>
+        <div class="team" id="teamBlack">
+            <h2>Preto: <span id="scoreBlack">0</span></h2>
+        </div>
+        <div class="message-board">
+            <h3>Recados:</h3>
+            <textarea id="messageBoard" readonly placeholder="Recados para as equipes"></textarea>
+        </div>
+    </div>
+
+    <script>
+        // Função para atualizar os placares e recados
+        function updateScoresAndMessages() {
+            // Aqui você pode fazer uma requisição AJAX ou WebSocket para obter os dados atualizados
+            // Exemplo de dados fixos para demonstração
+            var scoreOrange = 5;
+            var scoreBlack = 3;
+            var message = "Bom jogo, continuem assim!";
+
+            document.getElementById('scoreOrange').textContent = scoreOrange;
+            document.getElementById('scoreBlack').textContent = scoreBlack;
+            document.getElementById('messageBoard').textContent = message;
+        }
+
+        // Atualiza os placares e recados quando a página é carregada
+        window.onload = updateScoresAndMessages;
+    </script>
+</body>
+</html>
